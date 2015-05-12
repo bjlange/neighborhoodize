@@ -1,4 +1,5 @@
-Shapely==1.5.8
+Shapely==1.5.7
+beautifulsoup4==4.3.2
 fastkml==0.9
 pygeoif==0.4.1
 python-dateutil==2.4.2
