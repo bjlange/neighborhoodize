@@ -12,7 +12,8 @@ from fastkml import kml
 # constants
 NEIGHBORHOOD_FILENAME = "Boundaries - Neighborhoods.kml"
 PATH_TO_THIS_FILE = os.path.dirname(os.path.abspath(__file__))
-NEIGHBORHOOD_KML = os.path.join(PATH_TO_THIS_FILE,
+DATA_DIR = os.path.join(PATH_TO_THIS_FILE, 'data')
+NEIGHBORHOOD_KML = os.path.join(DATA_DIR,
                                 NEIGHBORHOOD_FILENAME)
 # exception classes
 
