@@ -10,11 +10,17 @@ from bs4 import BeautifulSoup
 from fastkml import kml
 
 # constants
-NEIGHBORHOOD_FILENAME = "Boundaries - Neighborhoods.kml"
+
 PATH_TO_THIS_FILE = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(PATH_TO_THIS_FILE, 'data')
-NEIGHBORHOOD_KML = os.path.join(DATA_DIR,
-                                NEIGHBORHOOD_FILENAME)
+
+CHICAGO_NEIGHBORHOODS = os.path.join(DATA_DIR,
+                                     "Boundaries - Neighborhoods.kml")
+NYC_NEIGHBORHOODS = os.path.join(DATA_DIR,
+                                 "NYC - Neighborhood Tabulation Areas.kml")
+
+
+
 # exception classes
 
 # interface functions
@@ -59,7 +65,7 @@ def read_neighborhood_kml(filename, meta_key="PRI_NEIGH"):
 class Neighborhoodizer(object):
 
     def __init__(self):
-        self.hood_polys = read_neighborhood_kml(NEIGHBORHOOD_KML)
+        self.hood_polys = read_neighborhood_kml(CHICAGO_NEIGHBORHOODS)
 
     def get_neighborhoods(self, lat, lng):
         """Takes a latitude and a longitude and returns a list of matching
@@ -68,6 +74,14 @@ class Neighborhoodizer(object):
         hoods = [name for name, poly in self.hood_polys.iteritems()
                  if poly.contains(point)]
         return hoods
+
+class NeighborhoodMap(object):
+    """A NeighborhoodMap is a series of polygons representing
+    neighborhoods, constructed from a file (KML only for the time
+    being)"""
+
+
+    pass
 
 # internal functions & classes
 
