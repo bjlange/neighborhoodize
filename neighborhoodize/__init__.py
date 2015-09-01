@@ -8,6 +8,7 @@ import pygeoif
 import shapely
 from bs4 import BeautifulSoup
 from fastkml import kml
+import fiona
 
 # constants
 
@@ -20,6 +21,8 @@ CHICAGO_NEIGHBORHOODS = os.path.join(DATA_DIR,
 # relevant meta_key: NTAName
 NYC_NEIGHBORHOODS = os.path.join(DATA_DIR,
                                  "NYC - Neighborhood Tabulation Areas.kml")
+
+NEW_YORK_ZILLOW = os.path.join(DATA_DIR, "ZillowNeighborhoods-NY")
 
 
 # exception classes
@@ -60,16 +63,28 @@ def read_neighborhood_kml(filename, map_name, meta_key="PRI_NEIGH"):
         shape_reader = shapely.geos.WKTReader(shapely.geos.lgeos)
         shape_poly = shape_reader.read(poly.wkt)
 
-        hood = Neighborhood(meta_dict[meta_key], shape_poly, kml_meta=meta_dict)
+        hood = Neighborhood(meta_dict[meta_key], shape_poly, meta_dict=meta_dict)
         hood_map.neighborhoods.append(hood)
 
+    return hood_map
+
+
+def read_zillow_shapefile(filename, map_name):
+    hood_map = NeighborhoodMap(map_name)
+    with fiona.open(filename) as data:
+        for hood_data in data:
+            metadata = dict(hood_data['properties'])
+            geometry = shapely.geometry.shape(hood_data['geometry'])
+            hood = Neighborhood(metadata['NAME'], geometry, meta_dict=metadata)
+            hood_map.neighborhoods.append(hood)
     return hood_map
 
 
 # classes
 class Neighborhoodizer(object):
     def __init__(self):
-        self.hood_map = read_neighborhood_kml(NYC_NEIGHBORHOODS, "NYC", meta_key="NTAName")
+        # self.hood_map = read_neighborhood_kml(NYC_NEIGHBORHOODS, "NYC", meta_key="NTAName")
+        self.hood_map = read_zillow_shapefile(NEW_YORK_ZILLOW, "NY-Zillow")
 
     def get_neighborhoods(self, lat, lng):
         """Takes a latitude and a longitude and returns a list of matching
@@ -94,10 +109,10 @@ class Neighborhood(object):
     """A Neighborhood is a polygon defining geographic borders, with accompanying metadata.
     """
 
-    def __init__(self, neighborhood_name, polygon, kml_meta=None):
+    def __init__(self, neighborhood_name, polygon, meta_dict=None):
         self.name = neighborhood_name
         self.polygon = polygon
-        self.kml_meta = kml_meta
+        self.meta_dict = meta_dict
 
 
 # internal functions & classes
