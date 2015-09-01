@@ -18,16 +18,16 @@ hood_map.get_neighborhoods(41.879617, -87.633463)
 Zillow provides their neighborhood boundaries free under Creative Commons. 
 These are good boundaries to use for colloquial/property-value related use cases.
 
-- zillow.ILLINOIS
-- zillow.NEW_YORK
+- `zillow.ILLINOIS`
+- `zillow.NEW_YORK`
 - more coming soon...
 
 ### City of New York
-- nyc.NEIGHBORHOOD_TABULATION_AREAS (these are [defined](http://www.nyc.gov/html/dcp/html/bytes/applbyte.shtml) 
+- `nyc.NEIGHBORHOOD_TABULATION_AREAS` (these are [defined](http://www.nyc.gov/html/dcp/html/bytes/applbyte.shtml) 
 by the Department of City Planning)
 
 ### City of Chicago
-- city_of_chicago.NEIGHBORHOODS (these are 
+- `city_of_chicago.NEIGHBORHOODS` (these are 
 [defined](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Neighborhoods/9wp7-iasj) 
 by the Department of Tourism)
 
