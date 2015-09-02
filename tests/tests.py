@@ -7,8 +7,11 @@ known_chicago_pairs = {
 }
 
 known_nyc_pairs = {
-    (40.709467, -73.962600): ['Williamsburg'] # only on Zillow
+    (40.709467, -73.962600): ['Williamsburg'],  # only on Zillow
+    (40.786330, -73.975881): ['Upper West Side'],
+    (40.668329, -73.977553): ['Park Slope']
 }
+
 
 def test_chicago_city():
     params = neighborhoodize.city_of_chicago.NEIGHBORHOODS
@@ -24,6 +27,7 @@ def test_chicago_zillow():
 
     for (lat, lng), answer in known_chicago_pairs.iteritems():
         assert chicago_map.get_neighborhoods(lat, lng) == answer
+
 
 def test_nyc_zillow():
     params = neighborhoodize.zillow.NEW_YORK
