@@ -16,4 +16,6 @@ setup(name="Neighborhoodize",
           "Shapely >= 1.5.7",
           "beautifulsoup4 >= 4.3.2",
           "fastkml >= 0.9"],
+      keywords=['neighborhood','gis','boundaries'],
+      classifiers = [],
       )
