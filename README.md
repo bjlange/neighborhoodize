@@ -1,7 +1,14 @@
 # Neighborhoodize
 
+![](https://img.shields.io/pypi/v/Neighborhoodize.svg)
+
 Neighborhoodize uses `fastkml`, `fiona`, and `shapely` to determine what 
 neighborhood a latitude, longitude pair resides in.
+
+## Installation
+`pip install Neighborhoodize`
+
+:boom: boom emoji, you're done.
 
 ## Usage example
 ```
