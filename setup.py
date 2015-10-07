@@ -10,8 +10,6 @@ setup(name="Neighborhoodize",
       author_email='brian.lange@datascopeanalytics.com',
       url='https://github.com/bjlange/neighborhoodize',
       packages=['neighborhoodize', ],
-      package_data={'neighborhoodize': ['data/*']},
-      download_url = 'https://github.com/bjlange/neighborhoodize/tarball/0.9.2',
       install_requires=[
           "Shapely >= 1.5.7",
           "beautifulsoup4 >= 4.3.2",
@@ -20,4 +18,5 @@ setup(name="Neighborhoodize",
       ],
       keywords=['neighborhood','gis','boundaries'],
       classifiers = [],
-      )
+      zip_safe=False,
+      include_package_data=True)
