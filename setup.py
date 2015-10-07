@@ -15,7 +15,9 @@ setup(name="Neighborhoodize",
       install_requires=[
           "Shapely >= 1.5.7",
           "beautifulsoup4 >= 4.3.2",
-          "fastkml >= 0.9"],
+          "fastkml >= 0.9",
+          "fiona >= 1.6.2"
+      ],
       keywords=['neighborhood','gis','boundaries'],
       classifiers = [],
       )
