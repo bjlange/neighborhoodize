@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name="Neighborhoodize",
-      version='0.9.2',
+      version='0.9.3',
       description='Utility for translating lat, long coordinates into '
                   'neighborhoods in various cities',
       author='Brian Lange',

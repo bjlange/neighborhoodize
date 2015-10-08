@@ -1,2 +1,2 @@
 include README.md
-include neighborhoodize/data/*
+recursive-include neighborhoodize/data *
