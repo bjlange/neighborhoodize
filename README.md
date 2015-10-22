@@ -7,13 +7,12 @@ neighborhood a latitude, longitude pair resides in.
 
 ## Installation
 ### Dependencies
-This package requires `shapely`, which requires `GEOS`, a non Python package.
-
-#### OSX 
-`brew install geos` using Homebrew
-
+This package uses `shapely` and `fiona`, which require `GEOS` and `GDAL`. On OS 
+X and Windows you shouldn't need to worry about these, but on a Linux system you 
+may need to install them: 
 #### Debian/Ubuntu
-`apt-get install libgeos-dev`
+`apt-get install libgeos-dev libgdal1-dev`
+
 
 ### This package
 `pip install Neighborhoodize`
