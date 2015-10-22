@@ -6,6 +6,16 @@ Neighborhoodize uses `fastkml`, `fiona`, and `shapely` to determine what
 neighborhood a latitude, longitude pair resides in.
 
 ## Installation
+### Dependencies
+This package requires `shapely`, which requires `GEOS`, a non Python package.
+
+#### OSX 
+`brew install geos` using Homebrew
+
+#### Debian/Ubuntu
+`apt-get install libgeos-dev`
+
+### This package
 `pip install Neighborhoodize`
 
 :boom: boom emoji, you're done.
