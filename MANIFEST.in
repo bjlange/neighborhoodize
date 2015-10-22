@@ -1,2 +1,5 @@
 include README.md
+include LICENSE.md
+include MANIFEST.in
+include requirements.txt
 recursive-include neighborhoodize/data *
