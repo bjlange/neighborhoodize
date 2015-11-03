@@ -3,12 +3,13 @@
 from distutils.core import setup
 
 setup(name="Neighborhoodize",
-      version='0.9.3',
+      version='0.9.4',
       description='Utility for translating lat, long coordinates into '
                   'neighborhoods in various cities',
       author='Brian Lange',
       author_email='brian.lange@datascopeanalytics.com',
       url='https://github.com/bjlange/neighborhoodize',
+      download_url='https://github.com/bjlange/neighborhoodize/releases/tag/0.9.4',
       packages=['neighborhoodize', ],
       install_requires=[
           "Shapely >= 1.5.7",
@@ -18,5 +19,4 @@ setup(name="Neighborhoodize",
       ],
       keywords=['neighborhood','gis','boundaries'],
       classifiers = [],
-      zip_safe=False,
-      include_package_data=True)
+)
