@@ -2,8 +2,8 @@ import os
 import fiona
 import shapely
 
-import common
-import constants
+from . import common
+from . import constants
 
 
 def read_zillow_shapefile(filename):
