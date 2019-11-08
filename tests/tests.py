@@ -22,21 +22,21 @@ def test_chicago_city():
     params = neighborhoodize.city_of_chicago.NEIGHBORHOODS
     chicago_map = neighborhoodize.NeighborhoodMap(params)
 
-    for (lat, lng), answer in known_chicago_pairs.iteritems():
+    for (lat, lng), answer in known_chicago_pairs.items():
         assert chicago_map.get_neighborhoods(lat, lng) == answer
 
 def test_nyc_city():
     params = neighborhoodize.nyc.NEIGHBORHOOD_TABULATION_AREAS
     nyc_map = neighborhoodize.NeighborhoodMap(params)
 
-    for (lat, lng), answer in known_city_nyc_pairs.iteritems():
+    for (lat, lng), answer in known_city_nyc_pairs.items():
         assert nyc_map.get_neighborhoods(lat, lng) == answer
 
 def test_chicago_zillow():
     params = neighborhoodize.zillow.ILLINOIS
     chicago_map = neighborhoodize.NeighborhoodMap(params)
 
-    for (lat, lng), answer in known_chicago_pairs.iteritems():
+    for (lat, lng), answer in known_chicago_pairs.items():
         assert chicago_map.get_neighborhoods(lat, lng) == answer
 
 
@@ -44,5 +44,5 @@ def test_nyc_zillow():
     params = neighborhoodize.zillow.NEW_YORK
     nyc_map = neighborhoodize.NeighborhoodMap(params)
 
-    for (lat, lng), answer in known_zillow_nyc_pairs.iteritems():
+    for (lat, lng), answer in known_zillow_nyc_pairs.items():
         assert nyc_map.get_neighborhoods(lat, lng) == answer

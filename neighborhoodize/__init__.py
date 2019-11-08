@@ -4,11 +4,11 @@ neighborhood they're located in. Currently Chicago only."""
 # imports
 import sys
 
-import city_of_chicago
-import nyc
-import zillow
+from . import city_of_chicago
+from . import nyc
+from . import zillow
 
-from common import NeighborhoodMap, Neighborhood
+from .common import NeighborhoodMap, Neighborhood
 
 
 def main():

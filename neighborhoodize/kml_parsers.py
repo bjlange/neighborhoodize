@@ -1,4 +1,4 @@
-import common
+from . import common
 import pygeoif
 import shapely
 from bs4 import BeautifulSoup

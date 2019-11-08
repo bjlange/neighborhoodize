@@ -20,7 +20,8 @@ class NeighborhoodMap(object):
                  if hood.polygon.contains(point)]
         return hoods
 
-    def __init__(self, (map_name, filepath, parser_fn)):
+    def __init__(self, arg_tuple):
+        map_name, filepath, parser_fn = arg_tuple
         self.name = map_name
         self.neighborhoods = parser_fn(filepath)
 

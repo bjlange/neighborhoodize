@@ -1,9 +1,8 @@
 nose
 fiona
 Shapely==1.5.7
-beautifulsoup4==4.3.2
+beautifulsoup4==4.8.1
 fastkml==0.9
 pygeoif==0.4.1
 python-dateutil==2.4.2
 six==1.9.0
-wsgiref==0.1.2
