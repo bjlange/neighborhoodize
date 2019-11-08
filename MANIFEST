@@ -14,6 +14,7 @@ neighborhoodize/nyc.py
 neighborhoodize/zillow.py
 neighborhoodize/data/.DS_Store
 neighborhoodize/data/__init__.py
+neighborhoodize/data/__pycache__/__init__.cpython-37.pyc
 neighborhoodize/data/city_of_chicago/Boundaries - Community Areas (current).kml
 neighborhoodize/data/city_of_chicago/Boundaries - Neighborhoods.kml
 neighborhoodize/data/nyc/.DS_Store
